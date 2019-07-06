@@ -297,11 +297,11 @@ def wait_for_login():
     timeout = 5
     while True:
         try:
-            element_present = EC.presence_of_element_located((By.ID, 'sketcher_icon'))
+            element_present = EC.presence_of_element_located((By.ID, 'icon-terminal'))
             WebDriverWait(browser, timeout).until(element_present)
             break;
         except TimeoutException:
-            print ("Not logged")
+            print ("WAITING: Not logged in yet")
 def get_npc_ips(count,npc_list):
     while True:
         try:
@@ -526,7 +526,7 @@ def hackip(ip_list):
             element2.send_keys("exit")
             element2.send_keys(Keys.ENTER)
 wait_for_login()
-print("LOGGED")
+print("SUCCESS: Logged in")
 time.sleep(30)
 count = 1
 get_npc_ips(count,npc_list)
